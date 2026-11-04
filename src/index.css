@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-brand-50: #fff5ed;
+  --color-brand-100: #ffe7d4;
+  --color-brand-200: #ffcaa8;
+  --color-brand-300: #ffa571;
+  --color-brand-400: #ff7a3d;
+  --color-brand-500: #f2600c;
+  --color-brand-600: #dd4b05;
+  --color-brand-700: #b53a07;
+  --color-brand-800: #8f2f0c;
+  --color-brand-900: #74290d;
+
+  --color-ink-50: #f7f8f9;
+  --color-ink-100: #eceef1;
+  --color-ink-200: #dcdfe4;
+  --color-ink-300: #bcc2cb;
+  --color-ink-400: #8d95a3;
+  --color-ink-500: #6b7383;
+  --color-ink-600: #4f5665;
+  --color-ink-700: #3a4050;
+  --color-ink-800: #232833;
+  --color-ink-900: #15181f;
+  --color-ink-950: #0d0f14;
+
+  --color-paper: #f1f1ee;
+  --color-cement: #e6e6e1;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ink-800);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink-900);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* Blueprint grid used on the dark hero panels */
+.blueprint {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.blueprint-fade {
+  mask-image: linear-gradient(to left, black, transparent 82%);
+}
+
+/* Thermal receipt paper */
+.nota {
+  position: relative;
+  background: #fffdf9;
+  box-shadow: 0 18px 40px -24px rgba(13, 15, 20, 0.55);
+}
+
+.nota::before,
+.nota::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background-image: radial-gradient(circle at 5px 0, transparent 4.5px, #fffdf9 5px);
+  background-size: 10px 7px;
+  background-repeat: repeat-x;
+}
+
+.nota::before {
+  top: -6px;
+}
+
+.nota::after {
+  bottom: -6px;
+  transform: rotate(180deg);
+}
+
+.dashed-rule {
+  border-top: 1px dashed var(--color-ink-300);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.sweep {
+  transform-origin: left;
+  animation: sweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .sweep {
+    animation: none;
+  }
+}
+
+/* Thermal receipt printing: only the nota is sent to the printer */
+@media print {
+  @page {
+    margin: 6mm;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 72mm;
+    padding: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .print-area::before,
+  .print-area::after {
+    display: none;
+  }
+}
