@@ -1,4 +1,4 @@
-# Bangun Jaya — POS & Kasir Toko Bangunan
+# TB. PUTRA AGUNG PRATAMA — POS & Kasir Toko Bangunan
 
 Frontend aplikasi kasir (POS) untuk toko bangunan dengan pengelolaan cabang. Satu database pusat, data terisolasi per cabang.
 

@@ -17,7 +17,7 @@ export default function Receipt({ txn, onClose }) {
     <div className="mx-auto max-w-[360px]">
       <div className="nota print-area rounded-sm px-5 py-5 font-mono text-[11.5px] leading-relaxed text-ink-900">
         <div className="text-center">
-          <div className="font-display text-[19px] font-bold tracking-wide">BANGUN JAYA</div>
+          <div className="font-display text-[19px] font-bold tracking-wide">TB. PUTRA AGUNG PRATAMA</div>
           <div className="text-[10.5px] font-semibold tracking-wide text-ink-600">{branch.name.toUpperCase()}</div>
           <div className="mt-1 text-[10px] leading-snug text-ink-500">{branch.address}</div>
           <div className="text-[10px] text-ink-500">Telp. {branch.phone}</div>

@@ -6,12 +6,12 @@ export const BRANCHES = [
   {
     id: 'cbr-pusat',
     code: 'PST',
-    name: 'Cabang Pusat Cileungsi',
-    shortName: 'Cileungsi',
-    city: 'Bogor',
-    address: 'Jl. Raya Cileungsi No. 142, Cileungsi, Bogor',
+    name: 'Cabang Pusat Patimuan',
+    shortName: 'Cimrutu',
+    city: 'Cilacap',
+    address: 'Kalengoban, Cimrutu, Kec. Patimuan, Kab. Cilacap',
     phone: '021-8230 4411',
-    manager: 'H. Suparman',
+    manager: 'Wahono',
     isMain: true,
     active: true,
     openedAt: '2014-03-02',
@@ -48,7 +48,7 @@ export const BRANCHES = [
 ]
 
 export const USERS = [
-  { id: 'usr-owner', name: 'H. Suparman', role: 'owner', branchId: 'cbr-pusat', initials: 'HS' },
+  { id: 'usr-owner', name: 'Wahono', role: 'owner', branchId: 'cbr-pusat', initials: 'WH' },
   { id: 'usr-admin', name: 'Rina Kartika', role: 'admin', branchId: 'cbr-cibinong', initials: 'RK' },
   { id: 'usr-ksr1', name: 'Rian Saputra', role: 'cashier', branchId: 'cbr-pusat', initials: 'RS' },
   { id: 'usr-ksr2', name: 'Dewi Lestari', role: 'cashier', branchId: 'cbr-cibinong', initials: 'DL' },
