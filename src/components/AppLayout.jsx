@@ -35,7 +35,7 @@ function Sidebar({ onNavigate }) {
           BJ
         </div>
         <div className="leading-tight">
-          <div className="font-display text-[17px] font-semibold tracking-wide">BANGUN JAYA</div>
+          <div className="font-display text-[17px] font-semibold tracking-wide">TB. PUTRA AGUNG PRATAMA</div>
           <div className="text-[10.5px] font-medium tracking-[0.14em] text-white/40">MATERIAL & KASIR</div>
         </div>
       </div>
